@@ -9,6 +9,7 @@ class Slider extends React.Component {
     this.setState({
       value: value
     });
+    this.props.onChange(value);
   };
 
   render() {

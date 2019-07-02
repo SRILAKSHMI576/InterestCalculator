@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import Result from "../Result/Result";
 import "./style.css";
-import { async } from "q";
 
 class InterestCalculator extends React.Component {
   state = {
@@ -14,9 +13,24 @@ class InterestCalculator extends React.Component {
   componentDidMount = () => {
     this.getAmount();
   };
+  changeAmount = value => {
+    this.setState({
+      amount: value
+    });
+    this.getAmount();
+  };
+  changeLoanDuration = value => {
+    this.setState({
+      loan: value
+    });
+    this.getAmount();
+  };
   getAmount = async () => {
     const response = await fetch(
-      "https://ftl-frontend-test.herokuapp.com/interest?amount=2000&numMonths=12"
+      "https://ftl-frontend-test.herokuapp.com/interest?amount=" +
+        this.state.amount +
+        "&numMonths=" +
+        this.state.loan
     );
     const data = await response.json();
     this.setState({
@@ -28,8 +42,18 @@ class InterestCalculator extends React.Component {
     return (
       <div className="interest-calculator">
         <div className="slider-sec">
-          <Slider title="Amount" min="500" max="5000" />
-          <Slider title="Loan duration" min="6" max="24" />
+          <Slider
+            onChange={this.changeAmount}
+            title="Amount"
+            min="500"
+            max="5000"
+          />
+          <Slider
+            onChange={this.changeLoanDuration}
+            title="Loan duration"
+            min="6"
+            max="24"
+          />
         </div>
         <Result
           interestRate={this.state.interestRate}
