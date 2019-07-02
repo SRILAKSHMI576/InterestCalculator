@@ -11,7 +11,7 @@ class InterestCalculator extends React.Component {
           <Slider title="Amount" min="500" max="5000" />
           <Slider title="Loan duration" min="6" max="24" />
         </div>
-        <Result />
+        <Result interestRate={0.5} monthlyPayment={100} />
       </div>
     );
   }
