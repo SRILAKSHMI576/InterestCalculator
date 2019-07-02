@@ -14,7 +14,7 @@ function Result() {
       <div className="monthly">
         <h3>Monthly payment: </h3>
         <h3>220.0</h3>
-      </div>{" "}
+      </div>
       <hr />
       <div className="yearly">
         <h3>Yearly payment: </h3>

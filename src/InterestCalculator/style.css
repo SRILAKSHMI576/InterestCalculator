@@ -1,3 +1,11 @@
 .interest-calculator {
   display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 200px;
+}
+.slider-sec {
+  box-shadow: 2px 2px 9px 2px darkgrey;
+  padding: 20px;
 }

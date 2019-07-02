@@ -36,4 +36,8 @@
   width: 200px;
   border-radius: 2px;
   margin-left: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 10px;
+  background: white;
 }
