@@ -3,7 +3,7 @@ import "./style.css";
 
 class Slider extends React.Component {
   state = {
-    value: 70
+    value: this.props.min
   };
   changeValue = value => {
     this.setState({
@@ -15,7 +15,7 @@ class Slider extends React.Component {
     return (
       <div>
         <div className="slider-result">
-          <h3>Amount</h3>
+          <h3>{this.props.title}</h3>
           <input
             className="result"
             type="text"
@@ -26,8 +26,8 @@ class Slider extends React.Component {
         <br />
         <input
           type="range"
-          min="1"
-          max="100"
+          min={this.props.min}
+          max={this.props.max}
           onChange={e => this.changeValue(e.target.value)}
           value={this.state.value}
           className="slider"
