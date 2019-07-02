@@ -1,0 +1,15 @@
+.interest,
+.monthly,
+.yearly {
+  display: flex;
+}
+.box {
+  border: 1px solid grey;
+  width: 250px;
+}
+.res {
+  text-align: center;
+  background: rgb(1, 70, 103);
+  font-size: 18px;
+  color: white;
+}
