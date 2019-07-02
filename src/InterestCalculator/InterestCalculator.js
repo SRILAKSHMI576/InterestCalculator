@@ -1,8 +1,13 @@
 import React from "react";
+import Slider from "../Slider/Slider";
 
 class InterestCalculator extends React.Component {
   render() {
-    return <div>hi</div>;
+    return (
+      <div>
+        <Slider />
+      </div>
+    );
   }
 }
 
